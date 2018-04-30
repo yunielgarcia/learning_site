@@ -15,12 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
 
-from . import view
+from . import views
 
 urlpatterns = [
-    url(r'^courses/$', include('courses.urls')),
+    url(r'^courses/', include('courses.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', view.index),
+    url(r'^$', views.index),
 
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+# Checks if we r in Debug mode it add this url for static files
+
+
