@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static from staticfiles%}
+{% load static from staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,15 @@
     <link type="text/css" rel="stylesheet" href="{% static "css/layout.css" %}">
 </head>
 <body>
-    <div class="site-container">
-        {% block content %}
-        {% endblock %}
-    </div>
+
+<div class="site-container">
+    <nav>
+        <a href="#">Home</a>
+        <a href="{% url 'course:list' %}">Courses</a>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</div>
 
 </body>
 </html>

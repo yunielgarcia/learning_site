@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    url(r'^courses/', include('courses.urls')),
+    url(r'^courses/', include('courses.urls', namespace='course')),
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
 
